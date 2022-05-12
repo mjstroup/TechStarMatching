@@ -293,7 +293,7 @@ function outputInformation(data, matches, simMatrix, userIndex) {
 	//This gives you top matches for overall
 	matches[0];
 
-    //i represents the top i-th match
+	//i represents the top i-th match
 	for (let i = 0; i < 3; i++) {
 		const row = [];
 		const indexOverall = matches[0][i];
@@ -313,7 +313,7 @@ function outputInformation(data, matches, simMatrix, userIndex) {
 		const indexRandom = matches[4][i];
 		row.push(simMatrix[4][userIndex][indexWork]);
 
-        output.push(row);
+		output.push(row);
 	}
 
 	return output;
@@ -368,28 +368,13 @@ function getData() {
 	simMatrix = calculateSimilarity();
 
 	outputMatrix = [];
-	for (let i = 0; i < userData.length; i++) {
-		matches = calculateMatches(i, simMatrix);
-		console.log("Matches");
-		printArr(matches);
+	matches = calculateMatches(i, simMatrix);
+	console.log("Matches");
+	printArr(matches);
 
-<<<<<<< HEAD
-		outputMatrix.push(outputInformation(data, matches, simMatrix, i));
-	}
+	outputMatrix.push(outputInformation(data, matches, simMatrix, i));
 
 	sessionStorage.setObj("outputMatrix", outputMatrix);
-=======
-    outputMatrix = [];
-    // for(let i = 0; i < userData.length; i++) {
-        matches = calculateMatches(i, simMatrix);
-        console.log('Matches');
-        printArr(matches);
-
-        outputMatrix.push(outputInformation(data, matches, simMatrix, i));
-    // }
-    
-    sessionStorage.setObj("outputMatrix", outputMatrix);
->>>>>>> d91106e7d377a263572cfed0f548ff65d4f82a5f
 
 	console.log("Output Matrix");
 	printArr(outputMatrix);
