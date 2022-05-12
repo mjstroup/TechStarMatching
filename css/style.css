@@ -82,10 +82,12 @@ input[type="range"] {
   align-items: center;
 }
 
-.different-page {
+.different-page-link {
   text-decoration: none;
 }
 
 #useful-links {
-  
+  list-style: none;
+  text-align: center;
+  align-items: center;
 }

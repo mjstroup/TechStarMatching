@@ -2,12 +2,24 @@
 const userData = [
     ["Bickston", "Laenger", 3, 2, 3, 3, 8, 8, 4, 5, 7, 8, 9, 8, 7, 2, 2, 8, 4, 8, 1, 9],
     ["Matthew", "Stroup", 7, 7, 8, 9, 6, 2, 3, 9, 9, 6, 10, 6, 8, 4, 4, 1, 2, 10, 10, 2],
-    ["Rosalee", "Ingmann", 7, 7, 5, 8, 3, 7, 3, 4, 10, 5, 9, 5, 6, 2, 2, 9, 7, 5, 2, 1, 3, 5, 5],
+    ["Rosalee", "Ingmann", 7, 7, 5, 8, 3, 7, 3, 4, 10, 5, 9, 5, 6, 2, 2, 9, 7, 5, 2, 1],
     ["Chidozie", "Nnaduruaku", 7, 2, 5, 6, 7, 9, 3, 3, 5, 7, 3, 5, 5, 1, 3, 1, 1, 1, 5, 5],
     ["Freddy", "Guerrero", 5, 2, 8, 4, 10, 8, 9, 6, 9, 9, 8, 9, 9, 1, 4, 10, 1, 4, 4, 5],
     ["Richard", "Luo", 5, 3, 5, 5, 8, 8, 8, 8, 3, 5, 2, 4, 5, 5, 4, 7, 1, 7, 7, 6]
 ];
 //example: [[matthew,stroup,3,6,1,2,6,8,2,1,10,2,5,3], [richard,luo,1,4,8,9,6,8,2,1,10,2,5,3]]
+
+/**
+ * Debugging purposes
+ */
+function printArr(arr) {
+    let str = "";
+    for (let item of arr) {
+        if (Array.isArray(item)) str += printArr(item);
+        else str += item + ", ";
+    }
+    console.log(str);
+}
 
 
 var similarity = [];
@@ -21,7 +33,9 @@ function addUserData(data) {
 
     similarity = calculateSimilarity();
     console.log("Similarity");
-    console.log(similarity[0]);
+    printArr(similarity);
+
+    return similarity
 }
 
 /**
@@ -154,11 +168,13 @@ function getData() {
     console.log('Data')
     console.log(data);
 
-    addUserData(data);
+    simMatrix=addUserData(data);
+    
     /**I think below is what we eventually want to do */
-    //simMatrix=caldulateSimilarity()
-    //matches=calculateMatches(userid, simMatrix)
-    //return outputInformation(data, matches, simMatrix, userid)
+    matches=calculateMatches(userid, simMatrix)
+    return outputInformation(data, matches, simMatrix, userid)
+
+    
 }
 
 
