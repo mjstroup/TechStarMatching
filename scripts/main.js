@@ -343,11 +343,11 @@ function getData() {
 
     outputMatrix = [];
     // for(let i = 0; i < userData.length; i++) {
-        matches = calculateMatches(i, simMatrix);
+        matches = calculateMatches(userData.length-1, simMatrix);
         console.log('Matches');
         printArr(matches);
 
-        outputMatrix.push(outputInformation(data, matches, simMatrix, i));
+        outputMatrix.push(outputInformation(userData, matches, simMatrix, userData.length-1));
     // }
     
     sessionStorage.setObj("outputMatrix", outputMatrix);
