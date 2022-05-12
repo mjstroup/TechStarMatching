@@ -338,36 +338,28 @@ function addUserData(data) {
  * */
 
 function getData() {
-	//send to new webpage
-	//window.location.href = "../html/results.html";
+    //send to new webpage
+    //window.location.href = "../html/results.html";
 
-	var first_name = document.getElementById("firstname").value;
-	var last_name = document.getElementById("lastname").value;
+    var first_name = document.getElementById("firstname").value;
+    var last_name = document.getElementById("lastname").value;
 
-	//Change if we add more questions
-	const NUM_QUESTIONS = 20;
+    //Change if we add more questions
+    const NUM_QUESTIONS = 20;
 
-	data = [first_name, last_name];
-	for (let i = 1; i <= NUM_QUESTIONS; i++) {
-		data.push(document.getElementById("q" + String(i)).value);
-	}
-	console.log("Data");
-	console.log(data);
+    data = [first_name, last_name];
+    for (let i = 1; i <= NUM_QUESTIONS; i++) {
+        data.push(document.getElementById("q" + String(i)).value);
+    }
+    console.log("Data");
+    console.log(data);
 
-	if (
-		first_name != undefined &&
-		last_name != undefined &&
-		first_name.length > 0 &&
-		+last_name.length > 0
-	) {
-		addUserData(data);
-	} else {
-		return;
-	}
+    if (first_name != undefined && last_name != undefined && first_name.length > 0 && + last_name.length > 0) {
+        addUserData(data);
+    } else {
+        return;
+    }
 
-	//the code below returns an output matrix that includes top matches for each user- do we need that?
-	//otherwise we can just call return a call to outputInformation
-	simMatrix = calculateSimilarity();
 
 	outputMatrix = [];
 	matches = calculateMatches(0, simMatrix);
@@ -375,9 +367,9 @@ function getData() {
 	printArr(matches);
 
 	outputMatrix = outputInformation(userData, matches, simMatrix, 0);
+    
+    sessionStorage.setObj("outputMatrix", outputMatrix);
 
-	sessionStorage.setObj("outputMatrix", outputMatrix);
-
-	console.log("Output Matrix");
-	printArr(outputMatrix);
+    console.log("Output Matrix");
+    printArr(outputMatrix);
 }
