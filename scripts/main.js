@@ -264,7 +264,9 @@ function calculateMatches(userIndex, simMatrix) {
 
 	//i = category
 	for (let i = 0; i < simMatrix.length; i++) {
-		output.push(findIndicesOfMax(simMatrix[i][userIndex], 3));
+        const temp = findIndicesOfMax(simMatrix[i][userIndex], 4);
+        temp.shift();
+		output.push(temp);
 	}
 
 	return output;
@@ -368,11 +370,11 @@ function getData() {
 	simMatrix = calculateSimilarity();
 
 	outputMatrix = [];
-	matches = calculateMatches(i, simMatrix);
+	matches = calculateMatches(0, simMatrix);
 	console.log("Matches");
 	printArr(matches);
 
-	outputMatrix.push(outputInformation(data, matches, simMatrix, i));
+	outputMatrix = outputInformation(userData, matches, simMatrix, 0);
 
 	sessionStorage.setObj("outputMatrix", outputMatrix);
 
