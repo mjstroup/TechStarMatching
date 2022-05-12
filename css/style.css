@@ -8,12 +8,21 @@
 
 
 .about-page-header {
-    align-items: center;
-}
-#dev-profiles .site-dev{
     text-align: center;
-    display: inline;
+}
+
+#dev-div {
+    text-align: center;
+}
+
+#dev-profiles {
     list-style: none;
+}
+
+#dev-profiles .site-dev {
+    display: inline-block;
+    margin: 0;
+    padding: 40px;
 }
 
 input[type="range"] {
