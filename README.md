@@ -8,11 +8,10 @@
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
-[![Contributors][contributors-shield]][contributors-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
 
-
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 
 <!-- PROJECT LOGO -->
 <br />
@@ -120,35 +119,9 @@ Chidozie Nnaduruaku - [https://www.linkedin.com/in/chidozie-nnaduruaku-64a16b225
 
 Rosalee Ingmann - [https://www.linkedin.com/in/rosalee-ingmann](https://www.linkedin.com/in/rosalee-ingmann)
 
-Freddy Guerrero
+Freddy Guerrero - [https://www.linkedin.com/in/freddy-guerrero](https://www.linkedin.com/in/freddy-guerrero)
+
+Matthew Stroup - [https://www.linkedin.com/in/mjstroup](https://www.linkedin.com/in/mjstroup)
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-<!-- ACKNOWLEDGMENTS -->
-## Acknowledgments
-
-Here are some cool resources to check out!
-
-* [Choose an Open Source License](https://choosealicense.com)
-* [Img Shields](https://shields.io)
-* [CLIP](https://openai.com/blog/clip/)
-* [VQGAN](https://compvis.github.io/taming-transformers/)
-* [Pixray](https://github.com/pixray/pixray)
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/HokusAI-Art/HokusAI-WebApp.svg?style=for-the-badge
-[contributors-url]: https://github.com/HokusAI-Art/graphs/contributors
-[stars-shield]: https://img.shields.io/github/stars/HokusAI-Art/HokusAI-WebApp?style=for-the-badge
-[stars-url]: https://github.com/HokusAI-Art/HokusAI-WebApp/stargazers
-[issues-shield]: https://img.shields.io/github/issues/HokusAI-Art/HokusAI-WebApp.svg?style=for-the-badge
-[issues-url]: https://github.com/HokusAI-Art/HokusAI-WebApp/issues
-[license-shield]: https://img.shields.io/github/license/HokusAI-Art/HokusAI-WebApp?style=for-the-badge
-[license-url]: https://github.com/HokusAI-Art/HokusAI-WebApp/blob/main/LICENSE
