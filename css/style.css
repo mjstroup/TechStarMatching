@@ -1,4 +1,18 @@
-.form {
-    margin-left: 150px;
-    
+#mainform {
+  float: left;
+  padding: 40px;
+  max-width: 600px;
+  margin: 40px auto;
+  margin-right: 20px;
+}
+
+
+#dev-profiles .site-dev{
+    text-align: center;
+    display: inline;
+    list-style: none;
+}
+
+input[type="range"] {
+  width:450px;
 }

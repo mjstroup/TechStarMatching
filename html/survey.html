@@ -2,7 +2,7 @@
 <html>
 
 <head>
-<link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/style.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
@@ -31,12 +31,58 @@
   </header>
 
 
-  <form>
+  <form id="mainform">
+    <b style="font-size:30px">Sample Form</b><br>
     <label for="firstname">First name:</label><br>
     <input type="text" id="firstname" name="firstname"><br>
     <label for="lastname">Last name:</label><br>
-    <input type="text" id="lastname" name="lastname"><br>
+    <input type="text" id="lastname" name="lastname"><br><br>
+    <!--
+      other form questions here
+    -->
+    <b style="font-size:30px">Personality Questions</b><br>
+    <label for="q1">Sample Question</label><br>
+    <input type="range" id="q1" value = "5" min = "1" max = "10" oninput="this.nextElementSibling.value = this.value">
+    <output>5</output>
+    <label for="q2">Sample Question</label><br>
+    <input type="range" id="q2" value = "5" min = "1" max = "10" oninput="this.nextElementSibling.value = this.value">
+    <output>5</output>
+    <label for="q3">Sample Question</label><br>
+    <input type="range" id="q3" value = "5" min = "1" max = "10" oninput="this.nextElementSibling.value = this.value">
+    <output>5</output>
+    <label for="q4">Sample Question</label><br>
+    <input type="range" id="q4" value = "5" min = "1" max = "10" oninput="this.nextElementSibling.value = this.value">
+    <output>5</output><br>
+    <b style="font-size:30px">Hobbies/Interests Questions</b><br>
+    <label for="q5">Sample Question</label><br>
+    <input type="range" id="q5" value = "5" min = "1" max = "10" oninput="this.nextElementSibling.value = this.value">
+    <output>5</output>
+    <label for="q6">Sample Question</label><br>
+    <input type="range" id="q6" value = "5" min = "1" max = "10" oninput="this.nextElementSibling.value = this.value">
+    <output>5</output>
+    <label for="q7">Sample Question</label><br>
+    <input type="range" id="q7" value = "5" min = "1" max = "10" oninput="this.nextElementSibling.value = this.value">
+    <output>5</output>
+    <label for="q8">Sample Question</label><br>
+    <input type="range" id="q8" value = "5" min = "1" max = "10" oninput="this.nextElementSibling.value = this.value">
+    <output>5</output><br>
+    <b style="font-size:30px">Work Style Questions</b><br>
+    <label for="q9">Sample Question</label><br>
+    <input type="range" id="q9" value = "5" min = "1" max = "10" oninput="this.nextElementSibling.value = this.value">
+    <output>5</output>
+    <label for="q10">Sample Question</label><br>
+    <input type="range" id="q10" value = "5" min = "1" max = "10" oninput="this.nextElementSibling.value = this.value">
+    <output>5</output>
+    <label for="q11">Sample Question</label><br>
+    <input type="range" id="q11" value = "5" min = "1" max = "10" oninput="this.nextElementSibling.value = this.value">
+    <output>5</output>
+    <label for="q12">Sample Question</label><br>
+    <input type="range" id="q12" value = "5" min = "1" max = "10" oninput="this.nextElementSibling.value = this.value">
+    <output>5</output>
 
+
+
+    <br><input type="submit" value="Submit">
   </form>
 
 </body>
