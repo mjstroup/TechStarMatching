@@ -1,6 +1,16 @@
 /**
+ * Calculates Euclidean similarity between 2 vectors
+ * USE THIS FOR NUMERICAL INPUTS
+ * Returns a similarity (float between 0 and 1)
+ */
+ function calculateEucSim(a, b) {
+    return 1 / (1 + euclideanDistance(a, b)); //This is the most common statistical representation of Euclidean Similarity
+}
+s
+/**
  * Calculate Euclidean Distance between 2 vectors
  * USE THIS FOR NUMERICAL INPUTS
+ * Returns a raw distance
  * Example input: let euc = euclideanDistance([1,2,5,6,4.6], [4,6,33,45,2.5]);
  */
  function euclideanDistance(a, b) {

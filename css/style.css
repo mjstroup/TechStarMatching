@@ -6,25 +6,35 @@
   margin-right: 20px;
 }
 
-
 .about-page-header {
-    text-align: center;
+  text-align: center;
+  margin: 0px;
+  padding: 20px;
 }
 
 #dev-div {
-    text-align: center;
+  text-align: center;
 }
 
 #dev-profiles {
-    list-style: none;
+  list-style: none;
 }
 
 #dev-profiles .site-dev {
-    display: inline-block;
-    margin: 0;
-    padding: 40px;
+  display: inline-block;
+  margin: 0;
+  padding: 40px;
+}
+
+.dev-images {
+  height: 200px;
+  width: 200px;
 }
 
 input[type="range"] {
-  width:450px;
+  width: 450px;
+}
+
+#about-desc {
+  text-align: center;
 }
