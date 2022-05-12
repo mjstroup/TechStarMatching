@@ -7,7 +7,7 @@
 //     element.appendChild(td);
 // }
 for (let i = 0; i < userData.length; i++) {
-    const td = document.createElement("td");
+    const td = document.createElement("li");
     const h2 = document.createElement("h2");
     const node = document.createTextNode(userData[i][0] + " " + userData[i][1]);
     h2.appendChild(node);

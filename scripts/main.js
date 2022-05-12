@@ -202,9 +202,6 @@ function calculateSimilarityHelper(startIndex, endIndex) {
 			row.push(cosineSimilarity(element_data, user_data_temp));
 		});
 
-		//For fun, if you want to use Euclidean similarity
-		//userData.forEach(element => row.append(calculateEucSim(element.splice(startIndex, endIndex), userData[i].splice(startIndex, endIndex))));
-
 		similarity.push(row);
 	}
 
