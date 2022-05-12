@@ -361,6 +361,7 @@ function getData() {
     }
 
 
+
 	outputMatrix = [];
 	matches = calculateMatches(0, simMatrix);
 	console.log("Matches");
