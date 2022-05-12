@@ -19,7 +19,7 @@
   <h3 align="center">Team 6 TechStar Matching</h3>
 
   <p align="center">
-    Have an idea but don't know how to draw it? Let HokusAI help you!
+    Need to find a partner? ;) or maybe just a teammate? Let TechStar Matching Help You
     <br />
     <a href="https://dazhizhong.gitbook.io/pixray-docs/docs/primary-settings"><strong>Explore the docs »</strong></a>
     <br />
