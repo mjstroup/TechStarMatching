@@ -262,14 +262,7 @@ takes in userIndex and the 3d similarity matrix and calculates top three
 matches with given user in each category and overall
  * */
 function calculateMatches(userIndex, simMatrix) {
-    const matches = [];
-    //I think this code works?
-    //Correct me if I'm wrong
-    //looks good to me, i was hoping there was an argmax function in JS like numpy has but apparently not :(
-    for (let i = 0; i < simMatrix.length; i++) {
-        matches.push(findIndicesOfMax(simMatrix[i][userIndex], 3));
-    }
-    return matches;
+    return findIndicesOfMax(simMatrix[0][userIndex], 3);
 }
 
 /** 
@@ -351,10 +344,14 @@ function getData() {
     outputMatrix = [];
     // for(let i = 0; i < userData.length; i++) {
         matches = calculateMatches(i, simMatrix);
+        console.log('Matches');
+        printArr(matches);
+
         outputMatrix.push(outputInformation(data, matches, simMatrix, i));
     // }
     
     sessionStorage.setObj("outputMatrix", outputMatrix);
 
+    console.log("Output Matrix");
     printArr(outputMatrix);
 }
