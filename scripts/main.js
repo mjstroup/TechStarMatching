@@ -373,10 +373,23 @@ function getData() {
 		console.log("Matches");
 		printArr(matches);
 
+<<<<<<< HEAD
 		outputMatrix.push(outputInformation(data, matches, simMatrix, i));
 	}
 
 	sessionStorage.setObj("outputMatrix", outputMatrix);
+=======
+    outputMatrix = [];
+    // for(let i = 0; i < userData.length; i++) {
+        matches = calculateMatches(i, simMatrix);
+        console.log('Matches');
+        printArr(matches);
+
+        outputMatrix.push(outputInformation(data, matches, simMatrix, i));
+    // }
+    
+    sessionStorage.setObj("outputMatrix", outputMatrix);
+>>>>>>> d91106e7d377a263572cfed0f548ff65d4f82a5f
 
 	console.log("Output Matrix");
 	printArr(outputMatrix);
