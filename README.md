@@ -83,17 +83,17 @@ Make sure you have Node.js installed before you run the second command. You are 
 <!-- CONTACT -->
 ## Contact
 
-Richard Luo - [https://sites.gatech.edu/richard/](https://sites.gatech.edu/richard/)
+Richard Luo - [Website](https://sites.gatech.edu/richard/)
 
-Bickston Laenger - [https://www.linkedin.com/in/bickstonl](https://www.linkedin.com/in/bickstonl)
+Bickston Laenger - [Website](https://bickston.com)
 
-Chidozie Nnaduruaku - [https://www.linkedin.com/in/chidozie-nnaduruaku-64a16b225](https://www.linkedin.com/in/chidozie-nnaduruaku-64a16b225)
+Chidozie Nnaduruaku - [LinkedIn](https://www.linkedin.com/in/chidozie-nnaduruaku-64a16b225)
 
-Rosalee Ingmann - [https://www.linkedin.com/in/rosalee-ingmann](https://www.linkedin.com/in/rosalee-ingmann)
+Rosalee Ingmann - [LinkedIn](https://www.linkedin.com/in/rosalee-ingmann)
 
-Freddy Guerrero - [https://www.linkedin.com/in/freddy-guerrero](https://www.linkedin.com/in/freddy-guerrero)
+Freddy Guerrero - [LinkedIn](https://www.linkedin.com/in/freddy-guerrero)
 
-Matthew Stroup - [https://www.linkedin.com/in/mjstroup](https://www.linkedin.com/in/mjstroup)
+Matthew Stroup - [LinkedIn](https://www.linkedin.com/in/mjstroup)
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
