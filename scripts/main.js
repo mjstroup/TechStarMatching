@@ -1,11 +1,11 @@
-//User data (very important)
+  //User data (very important)
 const userData = [
-    [Bickston, Laenger, 3, 2, 3, 3, 8, 8, 4, 5, 7, 8, ], 
-    [Matthew, Stroup, ], 
+    [Bickston, Laenger, 3, 2, 3, 3, 8, 8, 4, 5, 7, 8, 9, 8, 7, 2, 2, 8, 4, 8, 1, 9], 
+    [Matthew, Stroup, 7, 7, 8, 9, 6, 2, 3, 9, 9, 6, 10, 6, 8, 4, 4, 1, 2, 10, 10, 2], 
     [Rosalee, Ingmann, ], 
-    [Chidozie, Nnaduruaku, ],
-    [Freddy, Guerrero, 5, 2, 8, ],
-    [Richard, Luo, 5, 3, 5, 5, 8, 8, 8, 8, 3, 5, 2, 4, 5, 5, 4, 7, 1, 7, ]
+    [Chidozie, Nnaduruaku, 7, 25, 6, 7, 9, 3, 3, 5, 7, 3, 5, 5, 1, 3, 1, 1, 1, 5, 5],
+    [Freddy, Guerrero, 5, 2, 8, 4, 10, 8, 9, 6, 9, 9, 8, 9, 9, 1, 4, 10, 1, 4, 4, 5],
+    [Richard, Luo, 5, 3, 5, 5, 8, 8, 8, 8, 3, 5, 2, 4, 5, 5, 4, 7, 1, 7, 7, 6]
 ];
 //example: [[matthew,stroup,3,6,1,2,6,8,2,1,10,2,5,3], [richard,luo,1,4,8,9,6,8,2,1,10,2,5,3]]
 
@@ -86,31 +86,17 @@ function findIndicesOfMax(inp, count) {
 
 function calculateMatches(userIndex, simMatrix) {
     const matches = [];
-
-    //Sample call
-    matches.push((simMatrix[0][userIndex], 3));
-
-    //first do overall matches
-    const values = simMatrix[0][userIndex];
-    const matchIndices= []
-    //const matchIndices = tf.tensor1d([1, 0]);
-    for (var i = 0; i < values.length; i++){
-        matchIndices.append(values.indexOf(Math.max(values)));
-        
+    //I think this code works?
+    //Correct me if I'm wrong
+    //looks good to me, i was hoping there was an argmax function in JS like numpy has but apparently not :(
+    for(let i = 0; i < simMatrix.length; i++) {
+        matches.push(findIndicesOfMax(simMatrix[i][userIndex], 3));
     }
-    //find maximum three index values excluding userIndex (will be 1), put in 1d array []
-    //append array to matches
-    //then personality
-    //index to simMatrix[1,userIndex]
-    //then hobby
-    //index to simMatrix[2,userIndex]
-    //then work
-    //index to simMatrix[3,userIndex]
-    //then random
-    //index to simMatrix[4,userIndex]
-    //return matches
+    return matches;
+
 }
 
+ 
 
 /**
  * receive from survey.html

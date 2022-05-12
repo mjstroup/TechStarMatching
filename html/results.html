@@ -93,8 +93,8 @@
                 function drawChart() {
                   var data = google.visualization.arrayToDataTable([
                     ['Similarity', 'Similarity'],
-                    ['Similarity', .97],
-                    ['',.03]
+                    ['Similarity', .90],
+                    ['',.10]
                   ]);
                   var options = {'width':360, 'height':300, legend:'none', enableInteractivity:false};
                   // Display the chart inside the <div> element with id="piechart"
@@ -103,7 +103,7 @@
                   }
                   </script>
                   <h1 style="text-align:center; padding: 20px;">Here are the three people you are most similar to:</h1>
-                  <h1 style="text-align:center">John Doe</h1>
+                  <h1 style="text-align:center">John Doe vs. You</h1><br>
                   <table style="display:inline-table">
                     <td>
                       <h2 style="text-align:center">Personality</h2>
@@ -121,6 +121,219 @@
                       <h2 style="text-align:center">Random</h2>
                       <div id="random"></div>
                     </td>
-                  </table>
+                  </table><br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                  <script type="text/javascript">
+                    // Load google charts
+                    google.charts.load('current', {'packages':['corechart']});
+                    google.charts.setOnLoadCallback(drawChart);
+                    
+                    // Draw the chart and set the chart values
+                    function drawChart() {
+                      var data = google.visualization.arrayToDataTable([
+                      ['Similarity', 'Similarity'],
+                      ['Similarity', .97],
+                      ['',.03]
+                      
+                    ]);
+                      var options = {'width':360, 'height':300, legend:'none', enableInteractivity:false};
+                      // Display the chart inside the <div> element with id="piechart"
+                      var chart = new google.visualization.PieChart(document.getElementById('personality2'));
+                      chart.draw(data, options);
+                    }
+                    </script>
+      
+                    <script type="text/javascript">
+                    // Load google charts
+                    google.charts.setOnLoadCallback(drawChart);
+                    
+                    // Draw the chart and set the chart values
+                    function drawChart() {
+                      var data = google.visualization.arrayToDataTable([
+                      ['Similarity', 'Similarity'],
+                      ['Similarity', .97],
+                      ['',.03]
+                      
+                    ]);
+                      var options = {'width':360, 'height':300, legend:'none', enableInteractivity:false};
+                      // Display the chart inside the <div> element with id="piechart"
+                      var chart = new google.visualization.PieChart(document.getElementById('hobbies2'));
+                      chart.draw(data, options);
+                    }
+                    </script>
+                    
+                    <script type="text/javascript">
+                    // Load google charts
+                    google.charts.setOnLoadCallback(drawChart);
+                    
+                    // Draw the chart and set the chart values
+                    function drawChart() {
+                      var data = google.visualization.arrayToDataTable([
+                      ['Similarity', 'Similarity'],
+                      ['Similarity', .97],
+                      ['',.03]
+                      
+                    ]);
+                      var options = {'width':360, 'height':300, legend:'none', enableInteractivity:false};
+                      // Display the chart inside the <div> element with id="piechart"
+                      var chart = new google.visualization.PieChart(document.getElementById('work-style2'));
+                      chart.draw(data, options);
+                    }
+                    </script>
+      
+                    <script type="text/javascript">
+                      // Load google charts
+                      google.charts.setOnLoadCallback(drawChart);
+                      
+                      // Draw the chart and set the chart values
+                      function drawChart() {
+                        var data = google.visualization.arrayToDataTable([
+                          ['Similarity', 'Similarity'],
+                          ['Similarity', .90],
+                          ['',.10]
+                        ]);
+                        var options = {'width':360, 'height':300, legend:'none', enableInteractivity:false};
+                        // Display the chart inside the <div> element with id="piechart"
+                          var chart = new google.visualization.PieChart(document.getElementById('random2'));
+                          chart.draw(data, options);
+                        }
+                        </script>
+                        <h1 style="text-align:center">John Doe vs. You</h1><br>
+                        <table style="display:inline-table">
+                          <td>
+                            <h2 style="text-align:center">Personality</h2>
+                            <div id="personality2"></div>
+                          </td>
+                          <td>
+                            <h2 style="text-align:center">Hobbies/Interests</h2>
+                            <div id="hobbies2"></div>
+                          </td>
+                          <td>
+                            <h2 style="text-align:center">Work Style</h2>
+                            <div id="work-style2"></div>
+                          </td>
+                          <td>
+                            <h2 style="text-align:center">Random</h2>
+                            <div id="random2"></div>
+                          </td>
+                        </table><br><br>
+                  
+
+
+
+
+
+
+
+
+                        <script type="text/javascript">
+                          // Load google charts
+                          google.charts.load('current', {'packages':['corechart']});
+                          google.charts.setOnLoadCallback(drawChart);
+                          
+                          // Draw the chart and set the chart values
+                          function drawChart() {
+                            var data = google.visualization.arrayToDataTable([
+                            ['Similarity', 'Similarity'],
+                            ['Similarity', .97],
+                            ['',.03]
+                            
+                          ]);
+                            var options = {'width':360, 'height':300, legend:'none', enableInteractivity:false};
+                            // Display the chart inside the <div> element with id="piechart"
+                            var chart = new google.visualization.PieChart(document.getElementById('personality3'));
+                            chart.draw(data, options);
+                          }
+                          </script>
+            
+                          <script type="text/javascript">
+                          // Load google charts
+                          google.charts.setOnLoadCallback(drawChart);
+                          
+                          // Draw the chart and set the chart values
+                          function drawChart() {
+                            var data = google.visualization.arrayToDataTable([
+                            ['Similarity', 'Similarity'],
+                            ['Similarity', .97],
+                            ['',.03]
+                            
+                          ]);
+                            var options = {'width':360, 'height':300, legend:'none', enableInteractivity:false};
+                            // Display the chart inside the <div> element with id="piechart"
+                            var chart = new google.visualization.PieChart(document.getElementById('hobbies3'));
+                            chart.draw(data, options);
+                          }
+                          </script>
+                          
+                          <script type="text/javascript">
+                          // Load google charts
+                          google.charts.setOnLoadCallback(drawChart);
+                          
+                          // Draw the chart and set the chart values
+                          function drawChart() {
+                            var data = google.visualization.arrayToDataTable([
+                            ['Similarity', 'Similarity'],
+                            ['Similarity', .97],
+                            ['',.03]
+                            
+                          ]);
+                            var options = {'width':360, 'height':300, legend:'none', enableInteractivity:false};
+                            // Display the chart inside the <div> element with id="piechart"
+                            var chart = new google.visualization.PieChart(document.getElementById('work-style3'));
+                            chart.draw(data, options);
+                          }
+                          </script>
+            
+                          <script type="text/javascript">
+                            // Load google charts
+                            google.charts.setOnLoadCallback(drawChart);
+                            
+                            // Draw the chart and set the chart values
+                            function drawChart() {
+                              var data = google.visualization.arrayToDataTable([
+                                ['Similarity', 'Similarity'],
+                                ['Similarity', .90],
+                                ['',.10]
+                              ]);
+                              var options = {'width':360, 'height':300, legend:'none', enableInteractivity:false};
+                              // Display the chart inside the <div> element with id="piechart"
+                                var chart = new google.visualization.PieChart(document.getElementById('random3'));
+                                chart.draw(data, options);
+                              }
+                              </script>
+                              <h1 style="text-align:center">John Doe vs. You</h1><br>
+                              <table style="display:inline-table">
+                                <td>
+                                  <h2 style="text-align:center">Personality</h2>
+                                  <div id="personality3"></div>
+                                </td>
+                                <td>
+                                  <h2 style="text-align:center">Hobbies/Interests</h2>
+                                  <div id="hobbies3"></div>
+                                </td>
+                                <td>
+                                  <h2 style="text-align:center">Work Style</h2>
+                                  <div id="work-style3"></div>
+                                </td>
+                                <td>
+                                  <h2 style="text-align:center">Random</h2>
+                                  <div id="random3"></div>
+                                </td>
+                              </table><br><br>
+                  
         </body>
 </html>
