@@ -59,10 +59,14 @@ Yes, this is a vanilla Javascript website, so there's little overhead processing
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+If you wish to run this app from your browser, just head right [here](https://mjstroup.github.io/TechStarMatching/index.html)
+
+If you want to download it and run it locally, follow the instructions below.
 
 ### Installation
+
+This is an example of how you may give instructions on setting up your project locally.
+To get a local copy up and running follow these simple example steps.
 
 _Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
 
