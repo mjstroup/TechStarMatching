@@ -1,20 +1,27 @@
-  //User data (very important)
+//User data (very important)
 const userData = [
-    [Bickston, Laenger, 3, 2, 3, 3, 8, 8, 4, 5, 7, 8, 9, 8, 7, 2, 2, 8, 4, 8, 1, 9], 
-    [Matthew, Stroup, 7, 7, 8, 9, 6, 2, 3, 9, 9, 6, 10, 6, 8, 4, 4, 1, 2, 10, 10, 2], 
-    [Rosalee, Ingmann, ], 
-    [Chidozie, Nnaduruaku, 7, 25, 6, 7, 9, 3, 3, 5, 7, 3, 5, 5, 1, 3, 1, 1, 1, 5, 5],
-    [Freddy, Guerrero, 5, 2, 8, 4, 10, 8, 9, 6, 9, 9, 8, 9, 9, 1, 4, 10, 1, 4, 4, 5],
-    [Richard, Luo, 5, 3, 5, 5, 8, 8, 8, 8, 3, 5, 2, 4, 5, 5, 4, 7, 1, 7, 7, 6]
+    ["Bickston", "Laenger", 3, 2, 3, 3, 8, 8, 4, 5, 7, 8, 9, 8, 7, 2, 2, 8, 4, 8, 1, 9],
+    ["Matthew", "Stroup", 7, 7, 8, 9, 6, 2, 3, 9, 9, 6, 10, 6, 8, 4, 4, 1, 2, 10, 10, 2],
+    ["Rosalee", "Ingmann", 7, 7, 5, 8, 3, 7, 3, 4, 10, 5, 9, 5, 6, 2, 2, 9, 7, 5, 2, 1, 3, 5, 5],
+    ["Chidozie", "Nnaduruaku", 7, 2, 5, 6, 7, 9, 3, 3, 5, 7, 3, 5, 5, 1, 3, 1, 1, 1, 5, 5],
+    ["Freddy", "Guerrero", 5, 2, 8, 4, 10, 8, 9, 6, 9, 9, 8, 9, 9, 1, 4, 10, 1, 4, 4, 5],
+    ["Richard", "Luo", 5, 3, 5, 5, 8, 8, 8, 8, 3, 5, 2, 4, 5, 5, 4, 7, 1, 7, 7, 6]
 ];
 //example: [[matthew,stroup,3,6,1,2,6,8,2,1,10,2,5,3], [richard,luo,1,4,8,9,6,8,2,1,10,2,5,3]]
 
-/**
+
+const similarity = [];
+
+/**s
  * Appends user data to global array
  * @param data is an array of data (e.g. [matthew, stroup, 3, 6, 1, 2, 3])
  */
 function addUserData(data) {
     userData.push(data);
+
+    similarity = calculateSimilarity();
+    alert("HJEDSFSDF");
+    alert(similarity);
 }
 
 /**
@@ -49,7 +56,7 @@ function calculateSimilarityHelper(startIndex, endIndex) {
     const similarity = [];
     for (let i = 0; i < userData.length; i++) {
         const row = [];
-        
+
         //https://datascience.stackexchange.com/questions/27726/when-to-use-cosine-simlarity-over-euclidean-similarity
         //Fun fact: cosine similarity is roughly equivalent to Euclidean similarity for normalized data
         //Our data is all a scale of 1 to 10 so it's normalized and there is no difference between the 2 measurementss
@@ -67,6 +74,7 @@ function calculateSimilarityHelper(startIndex, endIndex) {
 
 /**
  * Stolen code to find top 3 max
+ * Helper for calculateMatches
  * Example: var indices = findIndicesOfMax(inputMatrix, 3);
  * @param inp matrix taken from
  * @param count number of top matches you want found
@@ -84,19 +92,43 @@ function findIndicesOfMax(inp, count) {
 }
 
 
+/**
+takes in userIndex and the 3d similarity matrix and calculates top three
+matches with given user in each category and overall
+ * */
 function calculateMatches(userIndex, simMatrix) {
     const matches = [];
     //I think this code works?
     //Correct me if I'm wrong
     //looks good to me, i was hoping there was an argmax function in JS like numpy has but apparently not :(
-    for(let i = 0; i < simMatrix.length; i++) {
+    for (let i = 0; i < simMatrix.length; i++) {
         matches.push(findIndicesOfMax(simMatrix[i][userIndex], 3));
     }
     return matches;
-
 }
 
- 
+/** 
+ This function gives the output that will be used in the results page.
+ The format is a matrix with each row being (firstname, lastname, matchpercent)
+ The first 3 rows are overall matches, next 3 are personality matches, and so on...
+ * */
+function outputInformation(data, matches, simMatrix, userIndex) {
+    //to find names from given index do data[index][0] and data[index][1]
+    //to find percent match from given index do simMatrix[x][userIndex][index]
+
+    const output = []
+    //i is the current category
+    for (let i = 0; i < 5; i++) {
+        //j is the match number in that category
+        for (let j = 0; j < 3; j++) {
+            givenIndex = matches[i][j];
+            //add first name, last name, match percent
+            const matchInfo = [data[givenIndex][0], data[givenIndex][1], simMatrix[i][userIndex][givenIndex]];
+            output.append(matchInfo);
+        }
+    }
+    return output;
+}
 
 /**
  * receive from survey.html
@@ -108,6 +140,7 @@ function calculateMatches(userIndex, simMatrix) {
 function getData() {
     //send to new webpage
     window.location.href = "../html/results.html";
+
     var first_name = document.getElementById('firstname').value;
     var last_name = document.getElementById('lastname').value;
 
@@ -119,9 +152,9 @@ function getData() {
         data.push(document.getElementById('q' + String(i)).value);
     }
     console.log(data);
-    alert(data);
 
     addUserData(data);
+    alert('HELP!');
     alert(userData);
 }
 

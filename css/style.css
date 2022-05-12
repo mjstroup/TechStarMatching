@@ -6,6 +6,11 @@
   margin-right: 20px;
 }
 
+.peopletable h2 {
+    padding:20px;
+    text-align:left;
+    font-size:20px;
+}
 .about-page-header {
   text-align: center;
   margin: 0px;
@@ -70,4 +75,13 @@ input[type="range"] {
 .dev-name {
   margin: 0px;
   padding: 15px;
+}
+
+#big-div {
+  text-align: center; 
+  align-items: center;
+}
+
+.different-page {
+  text-decoration: none;
 }

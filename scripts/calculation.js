@@ -3,7 +3,7 @@
  * USE THIS FOR NUMERICAL INPUTS
  * Returns a similarity (float between 0 and 1)
  */
- function calculateEucSim(a, b) {
+ export function calculateEucSim(a, b) {
     return 1 / (1 + euclideanDistance(a, b)); //This is the most common statistical representation of Euclidean Similarity
 }
 s
@@ -78,7 +78,7 @@ function magnitude(vec) {
 /**
  * Calculate cosine similarity between the two vectors
  */
-function cosineSimilarity(vecA, vecB) {
+export function cosineSimilarity(vecA, vecB) {
     return dotProduct(vecA, vecB) / (magnitude(vecA) * magnitude(vecB));
 }
 
@@ -108,7 +108,7 @@ function getSimilarityScore(val) {
  * Checks similarity between two strings
  * Uses cosine similarity
  */
-function checkCosineSimilarity(text1, text2) {
+export function checkCosineSimilarity(text1, text2) {
     const similarity = getSimilarityScore(textCosineSimilarity(text1, text2));
     console.log(similarity)
 }
