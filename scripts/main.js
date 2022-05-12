@@ -165,34 +165,29 @@ var similarity = [];
  * Ex: work data is 12, 17
  */
 function calculateSimilarityHelper(startIndex, endIndex) {
-	// if (startIndex == 2) {
-	// 	console.log("OK RIGHT HERE SIR!");
-	// 	console.log(endIndex);
-	// 	printArr(userData[0].splice(startIndex - 2, endIndex));
-    //     console.log("LMAO WTF");
-    //     console.log(userData[0][0]);
-	// }
-
-    printArr(userData);
-    printArr(userData[0].splice(startIndex, endIndex));
-
 	//Similarity matrix
 	const similarity = [];
 	for (let i = 0; i < userData.length; i++) {
+		if (userData[i][0] == undefined) {
+			continue;
+		}
+
 		const row = [];
 
 		//https://datascience.stackexchange.com/questions/27726/when-to-use-cosine-simlarity-over-euclidean-similarity
 		//Fun fact: cosine similarity is roughly equivalent to Euclidean similarity for normalized data
 		//Our data is all a scale of 1 to 10 so it's normalized and there is no difference between the 2 measurementss
 		//However cosine similarity sounds cooler so I'm using it
-		userData.forEach((element) =>
-			row.push(
-				cosineSimilarity(
-					element.splice(startIndex, endIndex),
-					userData[i].splice(startIndex, endIndex)
-				)
-			)
-		);
+		userData.forEach((element) => {
+			element_data = [];
+			user_data_temp = [];
+			for (let temp = startIndex; temp < endIndex; temp++) {
+				element_data.push(element[temp]);
+				user_data_temp.push(userData[i][temp]);
+			}
+
+			row.push(cosineSimilarity(element_data, user_data_temp));
+		});
 
 		//For fun, if you want to use Euclidean similarity
 		//userData.forEach(element => row.append(calculateEucSim(element.splice(startIndex, endIndex), userData[i].splice(startIndex, endIndex))));
@@ -211,7 +206,6 @@ function calculateSimilarityHelper(startIndex, endIndex) {
  */
 function calculateSimilarity() {
 	//Format of data array is that first two elements are firstName lastName respectively
-	const names = userData.map((subarray) => subarray.splice(0, 2)); //Last index is non inclusive!
 
 	//Calculate similarities
 	const similarityAll = calculateSimilarityHelper(2, userData[0].length);
