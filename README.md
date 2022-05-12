@@ -83,7 +83,7 @@ Make sure you have Node.js installed before you run the second command. You are 
 <!-- CONTACT -->
 ## Contact
 
-Richard Luo - [sites.gatech.edu/richard](sites.gatech.edu/richard)
+Richard Luo - [https://sites.gatech.edu/richard/](https://sites.gatech.edu/richard/)
 
 Bickston Laenger - [https://www.linkedin.com/in/bickstonl](https://www.linkedin.com/in/bickstonl)
 
