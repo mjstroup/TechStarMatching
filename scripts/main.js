@@ -360,17 +360,14 @@ function getData() {
         return;
     }
 
-
-	outputMatrix = [];
-	matches = calculateMatches(0, simMatrix);
-	console.log("Matches");
-	printArr(matches);
-
     outputMatrix = [];
+    const simMatrix = calculateSimilarity();
+
     matches = calculateMatches(userData.length-1, simMatrix);
     console.log('Matches');
+    printArr(matches);
 
-    outputMatrix = outputInformation(userData, matches, simMatrix, userData.length-1);
+    outputMatrix = outputInformation(userData, matches, simMatrix, userData.length - 1);
     
     sessionStorage.setObj("outputMatrix", outputMatrix);
 
