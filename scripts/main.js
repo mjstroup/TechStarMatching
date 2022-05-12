@@ -264,7 +264,9 @@ function calculateMatches(userIndex, simMatrix) {
 
 	//i = category
 	for (let i = 0; i < simMatrix.length; i++) {
-		output.push(findIndicesOfMax(simMatrix[i][userIndex], 3));
+        const temp = findIndicesOfMax(simMatrix[i][userIndex], 4);
+        temp.shift();
+		output.push(temp);
 	}
 
 	return output;
@@ -359,9 +361,10 @@ function getData() {
     }
 
 
-    //the code below returns an output matrix that includes top matches for each user- do we need that?
-    //otherwise we can just call return a call to outputInformation    
-    simMatrix = calculateSimilarity();
+	outputMatrix = [];
+	matches = calculateMatches(0, simMatrix);
+	console.log("Matches");
+	printArr(matches);
 
     outputMatrix = [];
     matches = calculateMatches(userData.length-1, simMatrix);
