@@ -10,7 +10,7 @@ const userData = [
 //example: [[matthew,stroup,3,6,1,2,6,8,2,1,10,2,5,3], [richard,luo,1,4,8,9,6,8,2,1,10,2,5,3]]
 
 
-const similarity = [];
+var similarity = [];
 
 /**s
  * Appends user data to global array
@@ -20,8 +20,8 @@ function addUserData(data) {
     userData.push(data);
 
     similarity = calculateSimilarity();
-    alert("HJEDSFSDF");
-    alert(similarity);
+    console.log("Similarity");
+    console.log(similarity[0]);
 }
 
 /**
@@ -61,12 +61,12 @@ function calculateSimilarityHelper(startIndex, endIndex) {
         //Fun fact: cosine similarity is roughly equivalent to Euclidean similarity for normalized data
         //Our data is all a scale of 1 to 10 so it's normalized and there is no difference between the 2 measurementss
         //However cosine similarity sounds cooler so I'm using it
-        userData.forEach(element => row.append(cosineSimilarity(element.splice(startIndex, endIndex), userData[i].splice(startIndex, endIndex))));
+        userData.forEach(element => row.push(cosineSimilarity(element.splice(startIndex, endIndex), userData[i].splice(startIndex, endIndex))));
 
         //For fun, if you want to use Euclidean similarity
         //userData.forEach(element => row.append(calculateEucSim(element.splice(startIndex, endIndex), userData[i].splice(startIndex, endIndex))));
 
-        similarity.append(row);
+        similarity.push(row);
     }
 
     return similarity;
@@ -151,11 +151,14 @@ function getData() {
     for (let i = 1; i <= NUM_QUESTIONS; i++) {
         data.push(document.getElementById('q' + String(i)).value);
     }
+    console.log('Data')
     console.log(data);
 
     addUserData(data);
-    alert('HELP!');
-    alert(userData);
+    /**I think below is what we eventually want to do */
+    //simMatrix=caldulateSimilarity()
+    //matches=calculateMatches(userid, simMatrix)
+    //return outputInformation(data, matches, simMatrix, userid)
 }
 
 
