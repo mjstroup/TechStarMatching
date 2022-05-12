@@ -4,8 +4,8 @@ const userData = [
     [Matthew, Stroup, ], 
     [Rosalee, Ingmann, ], 
     [Chidozie, Nnaduruaku, ],
-    [Freddy, Guerrero, 5],
-    [Richard, Luo, 5, 3, 5, 5, 8, 8, 8, 8, 3, 5, 2, 4, 5, 5, 4, ]
+    [Freddy, Guerrero, 5, 2, 8, ],
+    [Richard, Luo, 5, 3, 5, 5, 8, 8, 8, 8, 3, 5, 2, 4, 5, 5, 4, 7, 1, 7, ]
 ];
 //example: [[matthew,stroup,3,6,1,2,6,8,2,1,10,2,5,3], [richard,luo,1,4,8,9,6,8,2,1,10,2,5,3]]
 
@@ -93,6 +93,7 @@ function calculateMatches(userIndex, simMatrix) {
     //first do overall matches
     const values = simMatrix[0][userIndex];
     const matchIndices= []
+    //const matchIndices = tf.tensor1d([1, 0]);
     for (var i = 0; i < values.length; i++){
         matchIndices.append(values.indexOf(Math.max(values)));
         
