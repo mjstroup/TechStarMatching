@@ -1,11 +1,12 @@
-Storage.prototype.setObj = function(key, obj) {
+Storage.prototype.setObj = function (key, obj) {
     return this.setItem(key, JSON.stringify(obj))
 }
-Storage.prototype.getObj = function(key) {
+Storage.prototype.getObj = function (key) {
     return JSON.parse(this.getItem(key))
 }
 //User data (very important)
 var userData;
+var outputMatrix;
 if (sessionStorage.getItem("userData") == null) {
     userData = [
         [
@@ -161,12 +162,12 @@ if (sessionStorage.getItem("userData") == null) {
 
 
 function printArr(arr) {
-	let str = "";
-	for (let item of arr) {
-		if (Array.isArray(item)) str += printArr(item);
-		else str += item + ", ";
-	}
-	console.log(str);
+    let str = "";
+    for (let item of arr) {
+        if (Array.isArray(item)) str += printArr(item);
+        else str += item + ", ";
+    }
+    console.log(str);
 }
 
 var similarity = [];
@@ -178,34 +179,35 @@ var similarity = [];
  * Ex: work data is 12, 17
  */
 function calculateSimilarityHelper(startIndex, endIndex) {
-	//Similarity matrix
-	const similarity = [];
-	for (let i = 0; i < userData.length; i++) {
-		if (userData[i][0] == undefined) {
-			continue;
-		}
+    //Similarity matrix
+    const similarity = [];
+    for (let i = 0; i < userData.length; i++) {
+        //Please no bad data
+        if (userData[i][0] == undefined) {
+            continue;
+        }
 
-		const row = [];
+        const row = [];
 
-		//https://datascience.stackexchange.com/questions/27726/when-to-use-cosine-simlarity-over-euclidean-similarity
-		//Fun fact: cosine similarity is roughly equivalent to Euclidean similarity for normalized data
-		//Our data is all a scale of 1 to 10 so it's normalized and there is no difference between the 2 measurementss
-		//However cosine similarity sounds cooler so I'm using it
-		userData.forEach((element) => {
-			element_data = [];
-			user_data_temp = [];
-			for (let temp = startIndex; temp < endIndex; temp++) {
-				element_data.push(element[temp]);
-				user_data_temp.push(userData[i][temp]);
-			}
+        //https://datascience.stackexchange.com/questions/27726/when-to-use-cosine-simlarity-over-euclidean-similarity
+        //Fun fact: cosine similarity is roughly equivalent to Euclidean similarity for normalized data
+        //Our data is all a scale of 1 to 10 so it's normalized and there is no difference between the 2 measurementss
+        //However cosine similarity sounds cooler so I'm using it
+        userData.forEach((element) => {
+            element_data = [];
+            user_data_temp = [];
+            for (let temp = startIndex; temp < endIndex; temp++) {
+                element_data.push(element[temp]);
+                user_data_temp.push(userData[i][temp]);
+            }
 
-			row.push(cosineSimilarity(element_data, user_data_temp));
-		});
+            row.push(cosineSimilarity(element_data, user_data_temp));
+        });
 
-		similarity.push(row);
-	}
+        similarity.push(row);
+    }
 
-	return similarity;
+    return similarity;
 }
 
 /**
@@ -215,23 +217,23 @@ function calculateSimilarityHelper(startIndex, endIndex) {
  * @param isAllCategories
  */
 function calculateSimilarity() {
-	//Format of data array is that first two elements are firstName lastName respectively
+    //Format of data array is that first two elements are firstName lastName respectively
 
-	//Calculate similarities
-	const similarityAll = calculateSimilarityHelper(2, userData[0].length);
-	const similarityPersonality = calculateSimilarityHelper(2, 7);
-	const similarityHobby = calculateSimilarityHelper(7, 12);
-	const similarityWork = calculateSimilarityHelper(12, 17);
-	const similarityRandom = calculateSimilarityHelper(17, userData[0].length);
+    //Calculate similarities
+    const similarityAll = calculateSimilarityHelper(2, userData[0].length);
+    const similarityPersonality = calculateSimilarityHelper(2, 7);
+    const similarityHobby = calculateSimilarityHelper(7, 12);
+    const similarityWork = calculateSimilarityHelper(12, 17);
+    const similarityRandom = calculateSimilarityHelper(17, userData[0].length);
 
-	//We can return an array of these arrays
-	return [
-		similarityAll,
-		similarityPersonality,
-		similarityHobby,
-		similarityWork,
-		similarityRandom,
-	];
+    //We can return an array of these arrays
+    return [
+        similarityAll,
+        similarityPersonality,
+        similarityHobby,
+        similarityWork,
+        similarityRandom,
+    ];
 }
 
 /**
@@ -242,17 +244,17 @@ function calculateSimilarity() {
  * @param count number of top matches you want found
  */
 function findIndicesOfMax(inp, count) {
-	var outp = [];
-	for (var i = 0; i < inp.length; i++) {
-		outp.push(i); // add index to output array
-		if (outp.length > count) {
-			outp.sort(function (a, b) {
-				return inp[b] - inp[a];
-			}); // descending sort the output array
-			outp.pop(); // remove the last index (index of smallest element in output array)
-		}
-	}
-	return outp;
+    var outp = [];
+    for (var i = 0; i < inp.length; i++) {
+        outp.push(i); // add index to output array
+        if (outp.length > count) {
+            outp.sort(function (a, b) {
+                return inp[b] - inp[a];
+            }); // descending sort the output array
+            outp.pop(); // remove the last index (index of smallest element in output array)
+        }
+    }
+    return outp;
 }
 
 /**
@@ -260,41 +262,46 @@ takes in userIndex and the 3d similarity matrix and calculates top three
 matches with given user in each category and overall
  * */
 function calculateMatches(userIndex, simMatrix) {
-	const matches = [];
-	//I think this code works?
-	//Correct me if I'm wrong
-	//looks good to me, i was hoping there was an argmax function in JS like numpy has but apparently not :(
-	for (let i = 0; i < simMatrix.length; i++) {
-		matches.push(findIndicesOfMax(simMatrix[i][userIndex], 3));
-	}
-	return matches;
+    const matches = [];
+    //I think this code works?
+    //Correct me if I'm wrong
+    //looks good to me, i was hoping there was an argmax function in JS like numpy has but apparently not :(
+    for (let i = 0; i < simMatrix.length; i++) {
+        matches.push(findIndicesOfMax(simMatrix[i][userIndex], 3));
+    }
+    return matches;
 }
 
 /** 
- This function gives the output that will be used in the results page.
- The format is a matrix with each row being (firstname, lastname, matchpercent)
- The first 3 rows are overall matches, next 3 are personality matches, and so on...
- * */
+ * This function gives the output that will be used in the results page.
+ * The format is a matrix with each row being (firstname, lastname, matchpercent)
+ * The first 3 rows are overall matches, next 3 are personality matches, and so on...
+ * 
+ * [1st match first name, 1st match last name, 1st match overall, 1st match personality, 1st match hobbies, 1st match work style, 1st match random.]
+ * [2nd match first name, 2nd match last name, 2nd match overall, 2nd match personality, 2nd match hobbies, 2nd match work style, 2nd match random.]
+ * [3rd match first name, 3rd match last name, 3rd match overall, 3rd match personality, 3rd match hobbies, 3rd match work style, 3rd match random.]
+ * 
+ * 
+ * 
+ * 
+ */
 function outputInformation(data, matches, simMatrix, userIndex) {
-	//to find names from given index do data[index][0] and data[index][1]
-	//to find percent match from given index do simMatrix[x][userIndex][index]
-
-	const output = [];
-	//i is the current category
-	for (let i = 0; i < 5; i++) {
-		//j is the match number in that category
-		for (let j = 0; j < 3; j++) {
-			givenIndex = matches[i][j];
-			//add first name, last name, match percent
-			const matchInfo = [
-				data[givenIndex][0],
-				data[givenIndex][1],
-				simMatrix[i][userIndex][givenIndex],
-			];
-			output.append(matchInfo);
-		}
-	}
-	return output;
+    //to find names from given index do data[index][0] and data[index][1]
+    //to find percent match from given index do simMatrix[x][userIndex][index]
+    const output = [];
+    //j is the match number in that category
+    for (let j = 0; j < 3; j++) {
+        givenIndex = matches[0][j];
+        //add first name, last name, match percent
+        const matchInfo = [
+            data[givenIndex][0],
+            data[givenIndex][1],
+            simMatrix[0][userIndex][givenIndex], simMatrix[1][userIndex][givenIndex], 
+            simMatrix[2][userIndex][givenIndex], simMatrix[3][userIndex][givenIndex], simMatrix[4][userIndex][givenIndex]];
+            output.push(matchInfo);
+        
+    }
+    return output;
 }
 
 /**
@@ -302,11 +309,8 @@ function outputInformation(data, matches, simMatrix, userIndex) {
  * @param data is an array of data (e.g. [matthew, stroup, 3, 6, 1, 2, 3])
  */
 function addUserData(data) {
-	userData.push(data);
+    userData.push(data);
     sessionStorage.setObj("userData", userData);
-	similarity = calculateSimilarity();
-	console.log("Similarity");
-	printArr(similarity);
 }
 
 /**
@@ -317,25 +321,40 @@ function addUserData(data) {
  * */
 
 function getData() {
-	//send to new webpage
-	window.location.href = "../html/results.html";
+    //send to new webpage
+    //window.location.href = "../html/results.html";
 
-	var first_name = document.getElementById("firstname").value;
-	var last_name = document.getElementById("lastname").value;
+    var first_name = document.getElementById("firstname").value;
+    var last_name = document.getElementById("lastname").value;
 
-	//Change if we add more questions
-	const NUM_QUESTIONS = 20;
+    //Change if we add more questions
+    const NUM_QUESTIONS = 20;
 
-	data = [first_name, last_name];
-	for (let i = 1; i <= NUM_QUESTIONS; i++) {
-		data.push(document.getElementById("q" + String(i)).value);
-	}
-	console.log("Data");
-	console.log(data);
+    data = [first_name, last_name];
+    for (let i = 1; i <= NUM_QUESTIONS; i++) {
+        data.push(document.getElementById("q" + String(i)).value);
+    }
+    console.log("Data");
+    console.log(data);
 
-	addUserData(data);
-	/**I think below is what we eventually want to do */
-	//simMatrix=caldulateSimilarity()
-	//matches=calculateMatches(userid, simMatrix)
-	//return outputInformation(data, matches, simMatrix, userid)
+    if (first_name != undefined && last_name != undefined && first_name.length > 0 && + last_name.length > 0) {
+        addUserData(data);
+    } else {
+        return;
+    }
+
+
+    //the code below returns an output matrix that includes top matches for each user- do we need that?
+    //otherwise we can just call return a call to outputInformation    
+    simMatrix = calculateSimilarity();
+
+    outputMatrix = [];
+    for(let i = 0; i < userData.length; i++) {
+        matches = calculateMatches(i, simMatrix);
+        outputMatrix.push(outputInformation(data, matches, simMatrix, i));
+    }
+    
+    sessionStorage.setObj("outputMatrix", outputMatrix);
+
+    printArr(outputMatrix);
 }

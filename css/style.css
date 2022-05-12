@@ -1,88 +1,131 @@
 #mainform {
-  float: left;
-  padding: 40px;
-  max-width: 600px;
-  margin: 40px auto;
-  margin-right: 20px;
+    float: left;
+    padding: 40px;
+    max-width: 600px;
+    margin: 40px auto;
+    margin-right: 20px;
 }
 
 .peopletable h2 {
-    padding:20px;
-    text-align:left;
-    font-size:20px;
+    padding: 20px;
+    text-align: left;
+    font-size: 20px;
 }
+
 .about-page-header {
-  text-align: center;
-  margin: 0px;
-  padding: 20px;
+    text-align: center;
+    margin: 0px;
+    padding: 20px;
 }
 
 #dev-div {
-  text-align: center;
+    text-align: center;
 }
 
 #dev-profiles {
-  list-style: none;
+    list-style: none;
 }
 
 #dev-profiles .site-dev {
-  display: inline-block;
-  margin: 0px;
-  padding: 40px;
+    display: inline-block;
+    margin: 0px;
+    padding: 40px;
 }
 
 .media-links {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 .dev-images {
-  height: 200px;
-  width: 200px;
-  border-radius: 50%;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 input[type="range"] {
-  width: 450px;
+    width: 450px;
 }
 
 #about-desc {
-  text-align: center;
+    text-align: center;
 }
 
 .fa {
-  padding: 20px;
-  margin: 0px;
-  font-size: 30px;
-  width: 50px;
-  height: 30px;
-  text-align: center;
-  text-decoration: none;
-  border-radius: 50%;
+    padding: 20px;
+    margin: 0px;
+    font-size: 30px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
 }
 
 /* LinkedIn */
 .fa-linkedin {
-  background: #0077b5;
-  color: white;
+    background: #0077b5;
+    color: white;
 }
 
 /* Github */
 .fa-github {
-  background: #2b3137;
-  color: white;
+    background: #2b3137;
+    color: white;
 }
 
 .dev-name {
-  margin: 0px;
-  padding: 15px;
+    margin: 0px;
+    padding: 15px;
 }
 
 .different-page-link {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 #useful-links {
-  list-style: none;
-  text-align: center;
-  align-items: center;
+    list-style: none;
+    text-align: center;
+    align-items: center;
+}
+
+
+
+
+
+/* CSS */
+.button-24 {
+    background: #FF4742;
+    border: 1px solid #FF4742;
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: nunito, roboto, proxima-nova, "proxima nova", sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 16px;
+    min-height: 40px;
+    outline: 0;
+    padding: 12px 14px;
+    text-align: center;
+    text-rendering: geometricprecision;
+    text-transform: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+}
+
+.button-24:hover,
+.button-24:active {
+    background-color: initial;
+    background-position: 0 0;
+    color: #FF4742;
+}
+
+.button-24:active {
+    opacity: .5;
 }
