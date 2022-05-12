@@ -349,10 +349,10 @@ function getData() {
     simMatrix = calculateSimilarity();
 
     outputMatrix = [];
-    for(let i = 0; i < userData.length; i++) {
+    // for(let i = 0; i < userData.length; i++) {
         matches = calculateMatches(i, simMatrix);
         outputMatrix.push(outputInformation(data, matches, simMatrix, i));
-    }
+    // }
     
     sessionStorage.setObj("outputMatrix", outputMatrix);
 
