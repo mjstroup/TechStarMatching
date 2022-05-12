@@ -337,7 +337,7 @@ function addUserData(data) {
 
 function getData() {
     //send to new webpage
-    //window.location.href = "../html/results.html";
+    window.location.href = "../html/results.html";
 
     var first_name = document.getElementById("firstname").value;
     var last_name = document.getElementById("lastname").value;
@@ -364,13 +364,10 @@ function getData() {
     simMatrix = calculateSimilarity();
 
     outputMatrix = [];
-    // for(let i = 0; i < userData.length; i++) {
-        matches = calculateMatches(userData.length-1, simMatrix);
-        console.log('Matches');
-        printArr(matches);
+    matches = calculateMatches(userData.length-1, simMatrix);
+    console.log('Matches');
 
-        outputMatrix.push(outputInformation(userData, matches, simMatrix, userData.length-1));
-    // }
+    outputMatrix = outputInformation(userData, matches, simMatrix, userData.length-1);
     
     sessionStorage.setObj("outputMatrix", outputMatrix);
 
