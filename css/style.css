@@ -9,6 +9,8 @@
 
 .about-page-header {
     text-align: center;
+    margin: 0px;
+    padding: 20px;
 }
 
 #dev-div {
@@ -27,4 +29,8 @@
 
 input[type="range"] {
   width:450px;
+}
+
+#about-desc {
+    text-align: center;
 }
