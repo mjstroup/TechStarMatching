@@ -16,7 +16,7 @@
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/UKG_%28Ultimate_Kronos_Group%29_logo.svg/1200px-UKG_%28Ultimate_Kronos_Group%29_logo.svg.png" alt="Logo" width="220" height="80">
   </a>
 
-  <h3 align="center">Team 6 TechStar Matching</h3>
+  <h3 align="center">Team 6 TechStar Tinder</h3>
 
   <p align="center">
     Need to find a partner? ;) or maybe just a teammate? Let TechStar Matching Help You
