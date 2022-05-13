@@ -21,14 +21,14 @@
   <p align="center">
     Need to find a partner? ;) or maybe just a teammate? Let TechStar Matching Help You
     <br />
-    <a href="https://dazhizhong.gitbook.io/pixray-docs/docs/primary-settings"><strong>Explore the docs »</strong></a>
+    <a href="https://google.com"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://hokus-ai-app.herokuapp.com">View Demo</a>
+    <a href="https://mjstroup.github.io/TechStarMatching/">View Demo</a>
     ·
-    <a href="https://github.com/HokusAI-Art/HokusAI-WebApp/issues">Report Bug</a>
+    <a href="https://github.com/mjstroup/TechStarMatching/issues">Report Bug</a>
     ·
-    <a href="https://github.com/HokusAI-Art/HokusAI-WebApp/issues">Request Feature</a>
+    <a href="https://github.com/mjstroup/TechStarMatching/issues">Request Feature</a>
   </p>
 </div>
 
