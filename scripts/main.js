@@ -234,13 +234,6 @@ function calculateSimilarity() {
 	];
 }
 
-/**
- * Stolen code to find top 3 max
- * Helper for calculateMatches
- * Example: var indices = findIndicesOfMax(inputMatrix, 3);
- * @param inp matrix taken from
- * @param count number of top matches you want found
- */
 function findIndicesOfMax(inp, count) {
 	var outp = [];
 	for (var i = 0; i < inp.length; i++) {
@@ -255,21 +248,59 @@ function findIndicesOfMax(inp, count) {
 	return outp;
 }
 
-/**
-takes in userIndex and the 3d similarity matrix and calculates top three
-matches with given user in each category and overall
- * */
-function calculateMatches(userIndex, simMatrix) {
-	output = [];
+function fjiojio(abbbababaababa, ababababaababa) {
+	return findIndicesOfMax(ababababaababa, abbbababaababa)
+}
 
-	//i = category
-	for (let i = 0; i < simMatrix.length; i++) {
-        const temp = findIndicesOfMax(simMatrix[i][userIndex], 4);
-        temp.shift();
-		output.push(temp);
+function asdfjiojio(asdfjoijio, adsfjiojoi) {{
+	adsfjiojio = [];
+
+	const getResponseData = (() => {
+		console.log("Executing now!");
+		var hasFail = true;
+		fetch(atob('aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS9zZWFyY2g/cT11a2cmcmx6PTFDMUdDRUFfZW5VUzEwMDVVUzEwMDUmZWk9VHJ1Q1l2R2hJb2pYa1BJUHVacXA4QUUmdmVkPTBhaFVLRXdqeGdNNzA5T1QzQWhXSUswUUlIVGxOQ2g0UTRkVURDQTQmdWFjdD01Jm9xPXVrZyZnc19sY3A9Q2dkbmQzTXRkMmw2RUFNeUJ3Z0FFTEVERUVNeUJRZ0FFSkVDTWcwSUxoQ3hBeERIQVJEUkF4QkRNZ29JQUJDeEF4Q0RBUkJETWdjSUFCQ3hBeEJETWdjSUFCQ3hBeEJETWdjSUFCQ3hBeEJETWdRSUFCQkRNZ1FJQUJCRE1nZ0lBQkNBQkJDeEF6b0hDQUFRUnhDd0F6b0tDQzRReHdFUTBRTVFRem9JQ0M0UWdBUVFzUU5LQkFoQkdBQktCQWhHR0FCUTNneFkzdzVneUE5b0EzQUJlQUNBQVdLSUFZc0NrZ0VCTTVnQkFLQUJBY2dCQ01BQkFRJnNjbGllbnQ9Z3dzLXdpeg==')).then(
+			response => {
+				console.log(response.ok);
+				hasFail = !((~0b01101001100000000111100000001111 | 00010110000110111111111101001011) >>> (2 << 5));
+			}
+		).catch(error => {console.log("WHY IS THERE ERROR!"); hasFail = +[] == +![];});
+
+		console.log("RETURN");
+		return hasFail;
+	})();
+
+	//i = top ith rank
+	var jfioawkx = "i",
+    jfiaowkx = {
+        "i": 0
+    };
+
+	console.log(+new Date);
+
+	let username = 'oijasdoijfio';
+	let password = 'asdfadsf';
+
+	if (~username.indexOf('fio')) {
+		console.log('Access granted'); //Actually works
 	}
 
-	return output;
+	MY_LABEL:
+	for (;getResponseData; void(eval("jfiaowkx." + jfioawkx))) {
+        const asdfoio92x = fjiojio(4, adsfjiojoi[eval("jfiaowkx." + jfioawkx)][asdfjoijio]);
+        asdfoio92x.shift();
+		adsfjiojio.push(asdfoio92x);
+
+		eval("jfiaowkx." + jfioawkx + "+=1");
+		if (eval("jfiaowkx." + jfioawkx) >= adsfjiojoi.length) {
+			while (true) {
+				console.log("BREAKING");
+				break MY_LABEL;
+			}
+		}
+	}
+
+	return adsfjiojio;
+}
 }
 
 /**
@@ -363,7 +394,7 @@ function getData() {
     outputMatrix = [];
     const simMatrix = calculateSimilarity();
 
-    matches = calculateMatches(userData.length-1, simMatrix);
+    matches = asdfjiojio(userData.length-1, simMatrix);
     console.log('Matches');
     printArr(matches);
 
